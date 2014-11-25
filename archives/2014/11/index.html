@@ -93,11 +93,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>JobTracker and TaskTracker</p>
+<p>JobTracker是一个后台服务进程，启动之后，会一直监听并接收来自各个TaskTracker发送的心跳信息，包括资源使用情况和任务运行情况等信息。</p>
+<p>1.作业控制：在hadoop中每个应用程序被表示成一个作业，每个作业又被分成多个任务，JobTracker的作业控制模块则负责作业的分解和状态监控。</p>
+<p>最重要的是状态监控：主要包括TaskTracker状态监控、作业状态监控和任务状态监控。主要作用：容错和为任务调度提供决策依据。</p>
+<p>三 TaskTracker剖析：<br>(1)TaskTracker概述：TaskTracker是JobTracker和Task之间的桥梁：一方面，从JobTracker接收并执行各种命令：运行任务、提交任务、杀死任务等；另一方面，将本地节点上各个任务的状态通过心跳周期性汇报给JobTracker。TaskTracker与JobTracker和Task之间采用了RPC协议进行通信。<br>(2)TaskTracker的功能：<br>1.汇报心跳：Tracker周期性将所有节点上各种信息通过心跳机制汇报给JobTracker。这些信息包括两部分：<br><em>机器级别信息：节点健康情况、资源使用情况等。
+</em>任务级别信息：任务执行进度、任务运行状态等。<br>2.执行命令：JobTracker会给TaskTracker下达各种命令，主要包括：启动任务(LaunchTaskAction)、提交任务(CommitTaskAction)、杀死任务(KillTaskAction)、杀死作业(KillJobAction)和重新初始化(TaskTrackerReinitAction)。</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/11/25/分布式简述/" data-id="zy6lzbldb59yslx6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/11/25/分布式简述/" data-id="b5hfpef5l1d6dtky" class="article-share-link">Share</a>
       
       
     </footer>
@@ -134,7 +140,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/11/25/google-cardboard/" data-id="bkgryrul5fboyx4u" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/11/25/google-cardboard/" data-id="2olp3d4xc8a6i18w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -174,7 +180,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/11/24/算法与编程的关系/" data-id="hwtsbsorrxtfot50" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/11/24/算法与编程的关系/" data-id="hobzqhg4dxunus7z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -214,7 +220,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/11/24/如何选择博客框架/" data-id="339xr675zgtawtvg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/11/24/如何选择博客框架/" data-id="93df17mpyxsmzttc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -250,7 +256,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/11/23/iRow/" data-id="hjcbm9u5urpaexr7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/11/23/iRow/" data-id="f0ii2a6txq0wm8iy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -304,7 +310,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/11/23/hello-world/" data-id="pvdrgpka1ys4z4gu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/11/23/hello-world/" data-id="kbesfpj2ritg9vr5" class="article-share-link">Share</a>
       
       
     </footer>
