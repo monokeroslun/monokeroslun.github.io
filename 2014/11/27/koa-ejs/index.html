@@ -8,7 +8,7 @@
   <meta name="description" content="koa框架中ejs的使用
 Layout
 koa-ejs支持布局。默认的布局文件是layout,如果你想更改木人的布局文件，可以使用settings.layout。你也可以在yield this.render中的options.layout中进行设置。你也可以使用layout =false来关闭layout。
-1alert(‘Hello World!’);">
+12345&lt;html&gt;&lt;body&gt;&lt;%- body%&gt;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="koa-ejs">
 <meta property="og:url" content="http://yoursite.com/2014/11/27/koa-ejs/">
@@ -16,13 +16,13 @@ koa-ejs支持布局。默认的布局文件是layout,如果你想更改木人的
 <meta property="og:description" content="koa框架中ejs的使用
 Layout
 koa-ejs支持布局。默认的布局文件是layout,如果你想更改木人的布局文件，可以使用settings.layout。你也可以在yield this.render中的options.layout中进行设置。你也可以使用layout =false来关闭layout。
-1alert(‘Hello World!’);">
+12345&lt;html&gt;&lt;body&gt;&lt;%- body%&gt;">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="koa-ejs">
 <meta name="twitter:description" content="koa框架中ejs的使用
 Layout
 koa-ejs支持布局。默认的布局文件是layout,如果你想更改木人的布局文件，可以使用settings.layout。你也可以在yield this.render中的options.layout中进行设置。你也可以使用layout =false来关闭layout。
-1alert(‘Hello World!’);">
+12345&lt;html&gt;&lt;body&gt;&lt;%- body%&gt;">
 
   
     <link rel="alternative" href="/atom.xml" title="iRow not Cat" type="application/atom+xml">
@@ -99,11 +99,20 @@ koa-ejs支持布局。默认的布局文件是layout,如果你想更改木人的
         <h1 id="koa框架中ejs的使用">koa框架中ejs的使用</h1>
 <h2 id="Layout">Layout</h2>
 <p>koa-ejs支持布局。默认的布局文件是layout,如果你想更改木人的布局文件，可以使用settings.layout。你也可以在<code>yield this.render</code>中的<code>options.layout</code>中进行设置。你也可以使用<code>layout =false</code>来关闭layout。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function_or_atom">alert</span>(‘<span class="variable">Hello</span> <span class="variable">World</span><span class="exclamation_mark">!</span>’);</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></div><div class="line"><span class="vbscript">&lt;%- body%&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></div></pre></td></tr></table></figure>
+
+
+<h2 id="include">include</h2>
+<p>包含另一个html文件。</p>
+<h2 id="Filter">Filter</h2>
+<p>支持ejs的filter.</p>
+<h2 id="Locals">Locals</h2>
+<p>通过<code>settings.locals</code>才设置全局参数，locals可以是获取动态值的函数方法，locals也可以是<code>generatorFunction</code>或者是<code>generator</code>,你可以使用一些异步调用在locals中。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> locals = {</div><div class="line">  version: <span class="string">'0.0.1'</span>,</div><div class="line">  now: <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">  },</div><div class="line">  ip: <span class="function"><span class="keyword">function</span> *<span class="params">()</span> </span>{  <span class="comment">// generatorFunction</span></div><div class="line">    <span class="keyword">yield</span> wait(<span class="number">10</span>);</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.ip; <span class="comment">// use this like in koa middleware</span></div><div class="line">  }</div><div class="line">};</div></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/11/27/koa-ejs/" data-id="l5p0lzrl40mxxzsd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/11/27/koa-ejs/" data-id="0r1uimfu3m3x4y2v" class="article-share-link">Share</a>
       
       
     </footer>

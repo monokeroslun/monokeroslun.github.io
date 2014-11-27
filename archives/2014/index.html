@@ -92,11 +92,20 @@
         <h1 id="koa框架中ejs的使用">koa框架中ejs的使用</h1>
 <h2 id="Layout">Layout</h2>
 <p>koa-ejs支持布局。默认的布局文件是layout,如果你想更改木人的布局文件，可以使用settings.layout。你也可以在<code>yield this.render</code>中的<code>options.layout</code>中进行设置。你也可以使用<code>layout =false</code>来关闭layout。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function_or_atom">alert</span>(‘<span class="variable">Hello</span> <span class="variable">World</span><span class="exclamation_mark">!</span>’);</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></div><div class="line"><span class="vbscript">&lt;%- body%&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></div></pre></td></tr></table></figure>
+
+
+<h2 id="include">include</h2>
+<p>包含另一个html文件。</p>
+<h2 id="Filter">Filter</h2>
+<p>支持ejs的filter.</p>
+<h2 id="Locals">Locals</h2>
+<p>通过<code>settings.locals</code>才设置全局参数，locals可以是获取动态值的函数方法，locals也可以是<code>generatorFunction</code>或者是<code>generator</code>,你可以使用一些异步调用在locals中。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> locals = {</div><div class="line">  version: <span class="string">'0.0.1'</span>,</div><div class="line">  now: <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">  },</div><div class="line">  ip: <span class="function"><span class="keyword">function</span> *<span class="params">()</span> </span>{  <span class="comment">// generatorFunction</span></div><div class="line">    <span class="keyword">yield</span> wait(<span class="number">10</span>);</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.ip; <span class="comment">// use this like in koa middleware</span></div><div class="line">  }</div><div class="line">};</div></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/11/27/koa-ejs/" data-id="l5p0lzrl40mxxzsd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/11/27/koa-ejs/" data-id="0r1uimfu3m3x4y2v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -142,7 +151,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/11/25/分布式简述/" data-id="f1adafg4l88011sz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/11/25/分布式简述/" data-id="6ohw2b55v8oq894e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -179,7 +188,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/11/25/google-cardboard/" data-id="3wx4xct59yz2zoq3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/11/25/google-cardboard/" data-id="guu1h85xd1ixnq0w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -219,7 +228,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/11/24/算法与编程的关系/" data-id="lin229tlqpxuq5yv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/11/24/算法与编程的关系/" data-id="uii7gta7cpyjgmqy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -259,7 +268,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/11/24/如何选择博客框架/" data-id="ao0npe6my7a1izdb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/11/24/如何选择博客框架/" data-id="lztynwlrlcr0hvui" class="article-share-link">Share</a>
       
       
     </footer>
@@ -295,7 +304,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/11/23/iRow/" data-id="7fakhwp8k5wid8cg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/11/23/iRow/" data-id="bsdwva4b7cvlc5v6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -349,7 +358,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/11/23/hello-world/" data-id="fj0zxkk6hxfxabgg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/11/23/hello-world/" data-id="lzdqqqw24spsp35t" class="article-share-link">Share</a>
       
       
     </footer>
