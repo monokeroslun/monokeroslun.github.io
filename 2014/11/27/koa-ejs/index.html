@@ -3,26 +3,26 @@
 <head>
   <meta charset="utf-8">
   
-  <title>分布式简述 | iRow not Cat</title>
+  <title>koa-ejs | iRow not Cat</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JobTracker and TaskTracker
-JobTracker是一个后台服务进程，启动之后，会一直监听并接收来自各个TaskTracker发送的心跳信息，包括资源使用情况和任务运行情况等信息。
-1.作业控制：在hadoop中每个应用程序被表示成一个作业，每个作业又被分成多个任务，JobTracker的作业控制模块则负责作业的分解和状态监控。
-最重要的是状态监控：主要包括TaskTrac">
+  <meta name="description" content="koa框架中ejs的使用
+Layout
+koa-ejs支持布局。默认的布局文件是layout,如果你想更改木人的布局文件，可以使用settings.layout。你也可以在yield this.render中的options.layout中进行设置。你也可以使用layout =false来关闭layout。
+1alert(‘Hello World!’);">
 <meta property="og:type" content="article">
-<meta property="og:title" content="分布式简述">
-<meta property="og:url" content="http://yoursite.com/2014/11/25/分布式简述/">
+<meta property="og:title" content="koa-ejs">
+<meta property="og:url" content="http://yoursite.com/2014/11/27/koa-ejs/">
 <meta property="og:site_name" content="iRow not Cat">
-<meta property="og:description" content="JobTracker and TaskTracker
-JobTracker是一个后台服务进程，启动之后，会一直监听并接收来自各个TaskTracker发送的心跳信息，包括资源使用情况和任务运行情况等信息。
-1.作业控制：在hadoop中每个应用程序被表示成一个作业，每个作业又被分成多个任务，JobTracker的作业控制模块则负责作业的分解和状态监控。
-最重要的是状态监控：主要包括TaskTrac">
+<meta property="og:description" content="koa框架中ejs的使用
+Layout
+koa-ejs支持布局。默认的布局文件是layout,如果你想更改木人的布局文件，可以使用settings.layout。你也可以在yield this.render中的options.layout中进行设置。你也可以使用layout =false来关闭layout。
+1alert(‘Hello World!’);">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分布式简述">
-<meta name="twitter:description" content="JobTracker and TaskTracker
-JobTracker是一个后台服务进程，启动之后，会一直监听并接收来自各个TaskTracker发送的心跳信息，包括资源使用情况和任务运行情况等信息。
-1.作业控制：在hadoop中每个应用程序被表示成一个作业，每个作业又被分成多个任务，JobTracker的作业控制模块则负责作业的分解和状态监控。
-最重要的是状态监控：主要包括TaskTrac">
+<meta name="twitter:title" content="koa-ejs">
+<meta name="twitter:description" content="koa框架中ejs的使用
+Layout
+koa-ejs支持布局。默认的布局文件是layout,如果你想更改木人的布局文件，可以使用settings.layout。你也可以在yield this.render中的options.layout中进行设置。你也可以使用layout =false来关闭layout。
+1alert(‘Hello World!’);">
 
   
     <link rel="alternative" href="/atom.xml" title="iRow not Cat" type="application/atom+xml">
@@ -74,16 +74,12 @@ JobTracker是一个后台服务进程，启动之后，会一直监听并接收�
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-分布式简述" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-koa-ejs" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/11/25/分布式简述/" class="article-date">
-  <time datetime="2014-11-25T07:49:18.000Z" itemprop="datePublished">11月 25 2014</time>
+    <a href="/2014/11/27/koa-ejs/" class="article-date">
+  <time datetime="2014-11-27T08:25:12.000Z" itemprop="datePublished">11月 27 2014</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/算法/">算法</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -92,7 +88,7 @@ JobTracker是一个后台服务进程，启动之后，会一直监听并接收�
         
   
     <h1 class="article-title" itemprop="name">
-      分布式简述
+      koa-ejs
     </h1>
   
 
@@ -100,17 +96,14 @@ JobTracker是一个后台服务进程，启动之后，会一直监听并接收�
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>JobTracker and TaskTracker</p>
-<p>JobTracker是一个后台服务进程，启动之后，会一直监听并接收来自各个TaskTracker发送的心跳信息，包括资源使用情况和任务运行情况等信息。</p>
-<p>1.作业控制：在hadoop中每个应用程序被表示成一个作业，每个作业又被分成多个任务，JobTracker的作业控制模块则负责作业的分解和状态监控。</p>
-<p>最重要的是状态监控：主要包括TaskTracker状态监控、作业状态监控和任务状态监控。主要作用：容错和为任务调度提供决策依据。</p>
-<p>三 TaskTracker剖析：<br>(1)TaskTracker概述：TaskTracker是JobTracker和Task之间的桥梁：一方面，从JobTracker接收并执行各种命令：运行任务、提交任务、杀死任务等；另一方面，将本地节点上各个任务的状态通过心跳周期性汇报给JobTracker。TaskTracker与JobTracker和Task之间采用了RPC协议进行通信。<br>(2)TaskTracker的功能：<br>1.汇报心跳：Tracker周期性将所有节点上各种信息通过心跳机制汇报给JobTracker。这些信息包括两部分：<br><em>机器级别信息：节点健康情况、资源使用情况等。
-</em>任务级别信息：任务执行进度、任务运行状态等。<br>2.执行命令：JobTracker会给TaskTracker下达各种命令，主要包括：启动任务(LaunchTaskAction)、提交任务(CommitTaskAction)、杀死任务(KillTaskAction)、杀死作业(KillJobAction)和重新初始化(TaskTrackerReinitAction)。</p>
-
+        <h1 id="koa框架中ejs的使用">koa框架中ejs的使用</h1>
+<h2 id="Layout">Layout</h2>
+<p>koa-ejs支持布局。默认的布局文件是layout,如果你想更改木人的布局文件，可以使用settings.layout。你也可以在<code>yield this.render</code>中的<code>options.layout</code>中进行设置。你也可以使用<code>layout =false</code>来关闭layout。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function_or_atom">alert</span>(‘<span class="variable">Hello</span> <span class="variable">World</span><span class="exclamation_mark">!</span>’);</div></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/11/25/分布式简述/" data-id="3xiwln2d17ju3at8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/11/27/koa-ejs/" data-id="u4gx4ttsak98glqw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -119,19 +112,10 @@ JobTracker是一个后台服务进程，启动之后，会一直监听并接收�
     
 <nav id="article-nav">
   
-    <a href="/2014/11/27/koa-ejs/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          koa-ejs
-        
-      </div>
-    </a>
   
-  
-    <a href="/2014/11/25/google-cardboard/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2014/11/25/分布式简述/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title"></div>
+      <div class="article-nav-title">分布式简述</div>
     </a>
   
 </nav>
