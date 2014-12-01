@@ -67,6 +67,160 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-functional-programming-for-the-rest-of-us" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/01/functional-programming-for-the-rest-of-us/" class="article-date">
+  <time datetime="2014-12-01T10:24:02.000Z" itemprop="datePublished">12月 1 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/01/functional-programming-for-the-rest-of-us/">functional programming for the rest of us</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="介绍">介绍</h2>
+<p>程序员们都是拖延症患者。坐下来，然后喝点咖啡，再查个邮件，看看订阅的RSS，读点细分，看看技术网站上的最新文章，浏览一下在编程板块的特定区域的讨论。去吃个饭，然后回来坐坐，对着IDE发会呆。继续重复上午的事情。 不知不觉之中，一天过去了。</p>
+<p>只有一件事，隔一会儿会有一些有挑战性的文章出现。如果你看对地方了，你就会在一些天内发现至少一篇。这些文章很难看懂，所以他们开始堆积。不知不觉中，你已经有了很多文件和链接你没有看的了。</p>
+<p>我不知道你的这些堆积的文件都有什么，我这里是有很对关于函数式编程的。这些通常都是很难看懂的。都是一些学术性的文章，甚至连在华尔街呆了十年的工业人物也不知道什么是函数式编程。如果你问一个花旗银行的项目经理为什么他们用JMS而不用Erlang,他们会说他们不会在工业强度级的应用学术性的语言。问题是，一些复杂的系统中的最重要的需求都是用函数式编程的思想来编写的。有些事情说不通了。。。</p>
+<p>确实，FP的文章和论文都是很难读懂的，但是他们本不应该。其实难懂的原因是纯粹来自历史原因。FP概念其实是没有什么难的。考虑到这片文章是通向FP的guide,是一座建立在我们<strong>命令式思维</strong>和FP世界的桥梁。不要放下咖啡，继续读下去，你的同事们就要开始拿你对FP的评论找乐了。</p>
+<p>FP是什么，他是怎么产生的，他可以吃嘛？ 如果他像他的拥护者那样说的有用，为什么他没有在工业生产中得以充分的应用呢。为什么只有那些PHD去使用他呢。最重要的是，为什么他这么的难用。。。什么是<em>closure</em>,<em>continuation</em>,<em>currying</em>,<em>lazy evaluation</em>,<em>没有副作用的business</em>,我们怎么能不把一个大学牵扯进来的前提下在工程里使用他们呢？为什么他们与我们神圣的，亲爱的imperative 思维如此的不一样。我们将会在后面的文章中说明。我们现在先解释一下真实世界和学术世界之间的巨大鸿沟吧。答案从一段公园的散步开始。。</p>
+<p>乘坐时间旅行机，我们的散步在两千多年前，在一个非常美的晴天。plato和一个美丽的男奴。话题开始转向学术。</p>
+<p>-“看这两个学生。。”</p>
+<p>-你觉得谁高呢？</p>
+<p>-<em>他们同样高啊</em></p>
+<p>-你怎么定义同样高这个词？</p>
+<p>-他们从我这个位置上来看是一样高的，但是我不能确定除非我走近看看。</p>
+<p>plato笑了，他把小男孩引向一个正确的思维，你是想说，这个世界没有绝对的相等是不是？小男孩沉思了一会，说：是的，任何事物都有一点点的不同，即使我们看不到。重点在这里，如果这个世界没有完全的相等，那么perfect equality的定义是什么？小男孩很困惑的说，我不知道了。。</p>
+<p>第一个试图去理解数学的本质诞生了，Plato暗示任何事物在这个世界上都仅仅是近似的“完全（perfect）”.他也能意识到我们能够理解“完全“的概念即使我们从来没有遇到过。他总结出了任何完美的数学公式都是在另一个世界上的，我们怎么能通过一个与另一个世界相连的连接知道他们呢？很显然，这个世界没有绝对的圆。但是我们也可以明白什么是一个完美的圆并且我们也可以通过观察描述他。那么，什么是数学？为什么我们的世界要用数学的定律描述呢？那么所有出现在我们世界的现象都能通过数学描述吗？</p>
+<p>数学哲学是一个非常复杂的课题。就像许多哲学规则一样，这些规则更擅长抛出问题而不是提供答案。更多的舆论围绕在数学确实是令人迷惑的这个事实上。我们建立了一系列基本的无冲突的原则和一系列的规则去阐述怎样去运用这些规则。我们可以堆砌这些规则去建立更复杂的规则。数学上管这样的方法叫做形式系统或者是calculus.我们可以有效的为俄罗斯方块写一个形式系统如果我们想要的话。事实上，一个俄罗斯方块的实现是一个形式系统，只是使用了一个不普遍的表达方式。</p>
+<p><em>princinple: 内在的驱使你去做一些正确的事情。 People develop principles by living with people with principles and seeing the real benefits of such a life.</em></p>
+<p><em>rule:A rule externally compels you, through force, threat or punishment, to do the things someone else has deemed good or right. People follow or break rules.</em></p>
+<p><em><a href="http://sandradodd.com/rules" target="_blank" rel="external">http://sandradodd.com/rules</a></em></p>
+<p><em>形式系统(Formal System),,包含字母,字的集合及由关系组成的有限集合.</em></p>
+<p>毛皮动物的文明可能不能明白我们的俄罗斯方块形式系统因为他们只能通过味道感知。他们可能永远不会了解俄罗斯方块形式系统，但是他们可能拥有一个圆形的形式系统。我们可能不能读到因为我们的嗅觉可能没有那么的复杂。一旦你通过形式系统的表达式，在这之下的概念对任何智能的文明都是可理解的。</p>
+<p>有趣的是，如果没有智能的文明在这个世界中曾经存在过，对于俄罗斯方块和圆形的形式体系仍然能够站得住脚。这是由于没有人可以去找到他们。如果一个智能的文明出现，就会发现一些形式体系去帮助我们描述我们世界的一些规律。他们也很有可能不会发现俄罗斯方块因为这个世界上没有什么与之相似。俄罗斯方块是形式系统中数不尽例子中的一个，一个谜题，与真实的世界无关。我们甚至不能确认自然数字是否全部与真实世界相似，因为世界被证明是有限的。</p>
+<h2 id="a_bit_of_history">a bit of history</h2>
+<p>让我们再次改变时间机器的齿轮,这次我们近一点，去90世纪30年代。大萧条正在破坏新世界和旧世界。所有阶级的家庭都被影响到了由于巨大的经济低迷、很少的让人民免受贫穷的庇护所维持着。很少的人民能够在这些庇护所中生活。但是他们存在。我们的兴趣是在普林斯顿大学的数学家们。</p>
+<p>新的哥特风格的办公室给了普林斯顿安全天堂的气氛。全世界的逻辑学家都被邀请到普林斯顿大学去构建一个新的部门。当大多数美国人都找不到晚饭，在普林斯顿是如此惬意。</p>
+<p>一位叫Alonzo Church的数学家就是生活在如此丰富的生活格调里。 AC在普林斯顿获得理学学士学位并且被说服继续留在研究所。Alonzo感觉这里环境太宽松了。他很少端着杯茶和其他人讨论数学而且他也没有在森林中散步。Alonzo是一个孤独的人：他自己工作的时候产出往往更高。然而Alonzo还是与其他的普林斯顿住民之间的几个人有着固定的联系，他们是Alan Turing, John von Neumann, and Kurt Godel。</p>
+<p>这四个人都对形式系统有兴趣。他们没有花很多心思在物理世界里。他们更多的对抽象数学谜题有兴趣。他们的迷惑有很多相同之处。致力于研究关于计算的问题。一个我们拥有机器拥有无穷的计算资源。什么样的问题是我们能够解决的？我们能够自动的解决他们？有些问题为什么没有解决，为什么？不同设计的机器会有同样的能力吗？</p>
+<p>这四个人合作开发了一种形式系统叫做lambda calculus.这个系统本质上是一种编程语言针对于他们想象的机器中的一种。这种语言是基于函数的，可以让其他的函数作为参数，并且返回函数作为结果。这个函数被定义为了希腊字符lambda,也就是这个系统的名字。使用这种系统，A有能力去推导出很多上述问题并给出了答案。</p>
+<p><strong>原来lambda就是一种函数</strong></p>
+<p>独立于AC， AT也进行着相似的工作，他开发了另一种形式系统（现在被叫做Turing machine）,并且或的相似的结论。后来图灵机和lambda演算被证明具有相同的能力。</p>
+<p>这就是故事的结束。如果不是因为第二次世界大战的话，我们翻开书页，你可以去看下一页，世界被火焰淹没。US军队和纳粹使用很多火炮。未来提高精确度军队雇佣了一大群数学家去继续计算弹道射击表格所需的微分方程。对于手工计算来说这明显是一个巨大的工作，所以各种装备被开发出来以解决这一问题。第一台用于计算弹道表格的机器由IBM建造，叫做 Mark I —— 它重达5吨，有75万个零件，每秒钟可以做3次运算。</p>
+<p>竞赛，理所当然的，不会停止。1949年，艾维克（EDVAC，Electronic Discrete Variable Automatic Computer 离散变量自动电子计算机）崭露头角并且获得了巨大的成功。这是第一个von Neumann架构的例子，同时这也是一个实际的图灵机在现实世界的实现。Alonzo Church当时并不是那么的走运。</p>
+<p>1950年麻省（MIT）的一个教授John McCarthy（也是普林斯顿毕业的）开始对Alonzo Church的工作产生了兴趣。在1958年他推出了列表处理语言（List Processing language， Lisp）。Lisp是一个可以在von Neumann计算机上工作的Alonzo的lambda演算实现！很多计算机科学家都认识到了Lisp的表现力。1973年一群麻省人工智能实验室的程序员们开发了一种硬件，并命名为Lisp机——实际上这就是Alonzo的lambda演算的硬件载体实现。</p>
+<h2 id="函数式编程">函数式编程</h2>
+<p>函数式编程是AC想法的一种实现。不是所有的lambda表达式的想法都能转化成实践因为lambda表达式没有被设计为在有限的物理条件下进行实际工作。因此，像是面向对象的编程，函数式编程像是一组想法而不是一组严格的指导方针。这里有许多函数式编程的语言，并且很多都非常的不同。在这篇文章中，我会阐述函数式编程中最普遍使用的想法使用java来写。在下两节中我们会用java举例，将会做一些改变来将其转换成可用的函数式编程。现在让我们开始我们的探索吧。</p>
+<p>Lambda演算式是为了研究与计算相关的问题而设计的。函数式编程，因此，主要的解决计算的问题。并且，惊奇的是，使用函数去做。一个函数式是一个非常基本的单元在函数式编程里。函数会被大多数事物使用，甚至是在最简单的计算里。甚至变量也可以被替换成函数。在函数式编程里，变量是表达式的简单别名。(以便于我们不用把所有代码写在一行中)他们不可以被改变。所以的变量可以被分配一次。在java术语中，所有的单独的变量都被声明为<em>final</em>.</p>
+<p><code>final int i = 5;</code><br><code>final int j = i+3;</code></p>
+<p>因为所有的变量在FP中都是final的，所以有两个有趣的结论。总得写关键字final不太说得过去，还有既然它们不可变我们为什么还叫它们“变量”呢，好吧。。。变量。我们现在对Java做两个修改：在我们的函数式Java中所有的变量都会默认为final，并且我们从现在起把变量称为“符号”。</p>
+<p>到现在为止，你可能会很想知道如何去写一个合理的复杂的东西在我们创建的新语言中。如果任何符号都是不可变的，我们如何能够改变事物的状态呢？ 这不是严格意义上正确的。当A研究lambda算法的时候他没有对保持状态并在一段时间内改变他感兴趣。他感兴趣的是对数据的操作（也叫做计算东西）。但是，Lambda已经被证明与Turing机等价。他可以做命令式编程可以做的。那么，我们怎么获得相同的结果呢？</p>
+<p>函数式编程是可以存储状态的，只是他们不用变量。他们使用函数。状态被保存在函数的参数里，在栈里。如果你想去保持状态一会再去改变它，你要写一个递归函数。举个例子，我们写一个函数去递归一个java的字符串。记住，任何我们声明的变量都是final.</p>
+<p><code>String reverse(String arg)</code><br><code>if(arg.length==0){</code><br><code>return arg;</code><br><code>}</code><br><code>else{</code><br><code>return reverse(arg.substring(1,arg.length))+arg.substring(0,1);</code><br><code>}</code><br><code>}</code></p>
+<p> 这函数很慢，因为它不断的调用自己。（原作者注6）而且它特吃内存，因为它不断重复的分配对象。但是它是函数式的形式。你可能好奇为什么有人会以这种方式编程呢。恩，我这就告诉你。</p>
+<p> （原作者注6：很多函数式语言编译器尽可能的通过交替迭代算法对递归函数做了优化。这通称为tail call optimization）</p>
+<p>&lt;待续。。&gt;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/12/01/functional-programming-for-the-rest-of-us/" data-id="7x8j649d9g6w47s8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-函数式编程小记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/01/函数式编程小记/" class="article-date">
+  <time datetime="2014-12-01T10:14:51.000Z" itemprop="datePublished">12月 1 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/01/函数式编程小记/">函数式编程小记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/12/01/函数式编程小记/" data-id="mghb0l4pabi3oqlu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-mina-部署" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/29/mina-部署/" class="article-date">
+  <time datetime="2014-11-29T09:52:28.000Z" itemprop="datePublished">11月 29 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/29/mina-部署/">mina 部署</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="部署一个项目">部署一个项目</h2>
+<h3 id="创建一个config/deploy-rb">创建一个config/deploy.rb</h3>
+<p><code>mina init</code>  建立了一个config/deploy.rb</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/11/29/mina-部署/" data-id="kbw021k1bljs64vs" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-koa-ejs" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/11/27/koa-ejs/" class="article-date">
@@ -390,7 +544,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">7</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -402,23 +556,23 @@
       <ul>
         
           <li>
+            <a href="/2014/12/01/functional-programming-for-the-rest-of-us/">functional programming for the rest of us</a>
+          </li>
+        
+          <li>
+            <a href="/2014/12/01/函数式编程小记/">函数式编程小记</a>
+          </li>
+        
+          <li>
+            <a href="/2014/11/29/mina-部署/">mina 部署</a>
+          </li>
+        
+          <li>
             <a href="/2014/11/27/koa-ejs/">koa-ejs</a>
           </li>
         
           <li>
             <a href="/2014/11/25/分布式简述/">分布式简述</a>
-          </li>
-        
-          <li>
-            <a href="/2014/11/25/google-cardboard/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2014/11/24/算法与编程的关系/">算法与编程的关系</a>
-          </li>
-        
-          <li>
-            <a href="/2014/11/24/如何选择博客框架/">如何选择博客框架</a>
           </li>
         
       </ul>
