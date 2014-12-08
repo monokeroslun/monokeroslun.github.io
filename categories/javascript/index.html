@@ -112,6 +112,61 @@
 
 
   
+    <article id="post-promise-A-通过实践了解细节" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/05/promise-A-通过实践了解细节/" class="article-date">
+  <time datetime="2014-12-05T03:34:17.000Z" itemprop="datePublished">12月 5 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/05/promise-A-通过实践了解细节/">promise/A+ 通过实践了解细节</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://modernjavascript.blogspot.jp/2013/08/promisesa-understanding-by-doing.html" target="_blank" rel="external">http://modernjavascript.blogspot.jp/2013/08/promisesa-understanding-by-doing.html</a></p>
+<p>我们会通过 <a href="http://promises-aplus.github.io/promises-spec/" target="_blank" rel="external">http://promises-aplus.github.io/promises-spec/</a> 学会如何实现promise。通过这个，我们可以对promise的工作有一个深刻的了解。我叫它Aplus，并且把他放在github下了。 <a href="https://github.com/rhysbrettbowen/Aplus" target="_blank" rel="external">https://github.com/rhysbrettbowen/Aplus</a></p>
+<p>首先，我们来一个Aplus对象。</p>
+<p><code>Aplus={}</code></p>
+<h2 id="Promise_状态">Promise 状态</h2>
+<p>这里有三个状态： pending,fulfilled and rejected.</p>
+<pre><code>*<span class="built_in">from</span> <span class="keyword">http</span>://promises-aplus.github.io/promises-spec/
+<span class="comment">#promise_states there are three states: pending, </span>
+fulfilled <span class="operator">and</span> rejected. It does <span class="operator">not</span> state <span class="operator">the</span> <span class="built_in">value</span> <span class="operator">of</span> 
+these states, so let<span class="string">'s enumerate them*</span>
+</code></pre><h2 id="Promise">Promise</h2>
+<p>promise有三个状态：pending,fulfilled 和 rejected.</p>
+<p>我们可以把它想成一个状态转移图。这个转移图是由状态和转移条件组成的。见下图：</p>
+<p><img src="../image/promise_1.png" alt="image"></p>
+<p>条件1是：</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/12/05/promise-A-通过实践了解细节/" data-id="v03xuejcbdf1vcrg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
   
 </section>
         
@@ -121,7 +176,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/node-js/">node js</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂七杂八/">杂七杂八</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/node-js/">node js</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂七杂八/">杂七杂八</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
