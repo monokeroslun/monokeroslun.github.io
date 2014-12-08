@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Category: 算法 | iRow not Cat</title>
+  <title>promise/A+ 通过实践了解细节 | iRow not Cat</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="iRow not Cat">
-<meta property="og:url" content="http://yoursite.com/categories/算法/">
+  <meta name="description" content="http://modernjavascript.blogspot.jp/2013/08/promisesa-understanding-by-doing.html
+我们会通过 http://promises-aplus.github.io/promises-spec/ 学会如何实现promise。通过这个，我们可以对promise的工作有一个深刻的了解。我叫它Aplus，并且把他放在github下">
+<meta property="og:type" content="article">
+<meta property="og:title" content="promise/A+ 通过实践了解细节">
+<meta property="og:url" content="http://yoursite.com/2014/12/05/promise-A-通过实践了解细节/">
 <meta property="og:site_name" content="iRow not Cat">
-<meta property="og:description">
+<meta property="og:description" content="http://modernjavascript.blogspot.jp/2013/08/promisesa-understanding-by-doing.html
+我们会通过 http://promises-aplus.github.io/promises-spec/ 学会如何实现promise。通过这个，我们可以对promise的工作有一个深刻的了解。我叫它Aplus，并且把他放在github下">
+<meta property="og:image" content="../image/promise_1.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iRow not Cat">
-<meta name="twitter:description">
+<meta name="twitter:title" content="promise/A+ 通过实践了解细节">
+<meta name="twitter:description" content="http://modernjavascript.blogspot.jp/2013/08/promisesa-understanding-by-doing.html
+我们会通过 http://promises-aplus.github.io/promises-spec/ 学会如何实现promise。通过这个，我们可以对promise的工作有一个深刻的了解。我叫它Aplus，并且把他放在github下">
 
   
     <link rel="alternative" href="/atom.xml" title="iRow not Cat" type="application/atom+xml">
@@ -65,18 +69,12 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-分布式简述" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-promise-A-通过实践了解细节" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/11/25/分布式简述/" class="article-date">
-  <time datetime="2014-11-25T07:49:18.000Z" itemprop="datePublished">11月 25 2014</time>
+    <a href="/2014/12/05/promise-A-通过实践了解细节/" class="article-date">
+  <time datetime="2014-12-05T03:34:17.000Z" itemprop="datePublished">12月 5 2014</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/算法/">算法</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -84,8 +82,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/25/分布式简述/">分布式简述</a>
+    <h1 class="article-title" itemprop="name">
+      promise/A+ 通过实践了解细节
     </h1>
   
 
@@ -93,67 +91,54 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>JobTracker and TaskTracker</p>
-<p>JobTracker是一个后台服务进程，启动之后，会一直监听并接收来自各个TaskTracker发送的心跳信息，包括资源使用情况和任务运行情况等信息。</p>
-<p>1.作业控制：在hadoop中每个应用程序被表示成一个作业，每个作业又被分成多个任务，JobTracker的作业控制模块则负责作业的分解和状态监控。</p>
-<p>最重要的是状态监控：主要包括TaskTracker状态监控、作业状态监控和任务状态监控。主要作用：容错和为任务调度提供决策依据。</p>
-<p>三 TaskTracker剖析：<br>(1)TaskTracker概述：TaskTracker是JobTracker和Task之间的桥梁：一方面，从JobTracker接收并执行各种命令：运行任务、提交任务、杀死任务等；另一方面，将本地节点上各个任务的状态通过心跳周期性汇报给JobTracker。TaskTracker与JobTracker和Task之间采用了RPC协议进行通信。<br>(2)TaskTracker的功能：<br>1.汇报心跳：Tracker周期性将所有节点上各种信息通过心跳机制汇报给JobTracker。这些信息包括两部分：<br><em>机器级别信息：节点健康情况、资源使用情况等。
-</em>任务级别信息：任务执行进度、任务运行状态等。<br>2.执行命令：JobTracker会给TaskTracker下达各种命令，主要包括：启动任务(LaunchTaskAction)、提交任务(CommitTaskAction)、杀死任务(KillTaskAction)、杀死作业(KillJobAction)和重新初始化(TaskTrackerReinitAction)。</p>
+        <p><a href="http://modernjavascript.blogspot.jp/2013/08/promisesa-understanding-by-doing.html" target="_blank" rel="external">http://modernjavascript.blogspot.jp/2013/08/promisesa-understanding-by-doing.html</a></p>
+<p>我们会通过 <a href="http://promises-aplus.github.io/promises-spec/" target="_blank" rel="external">http://promises-aplus.github.io/promises-spec/</a> 学会如何实现promise。通过这个，我们可以对promise的工作有一个深刻的了解。我叫它Aplus，并且把他放在github下了。 <a href="https://github.com/rhysbrettbowen/Aplus" target="_blank" rel="external">https://github.com/rhysbrettbowen/Aplus</a></p>
+<p>首先，我们来一个Aplus对象。</p>
+<p><code>Aplus={}</code></p>
+<h2 id="Promise_状态">Promise 状态</h2>
+<p>这里有三个状态： pending,fulfilled and rejected.</p>
+<pre><code>*<span class="built_in">from</span> <span class="keyword">http</span>://promises-aplus.github.io/promises-spec/
+<span class="comment">#promise_states there are three states: pending, </span>
+fulfilled <span class="operator">and</span> rejected. It does <span class="operator">not</span> state <span class="operator">the</span> <span class="built_in">value</span> <span class="operator">of</span> 
+these states, so let<span class="string">'s enumerate them*</span>
+</code></pre><h2 id="Promise_62964977">Promise 62964977</h2>
+<p>promise有三个状态：pending,fulfilled 和 rejected.</p>
+<p>我们可以把它想成一个状态转移图。这个转移图是由状态和转移条件组成的。见下图：</p>
+<p><img src="../image/promise_1.png" alt="image"></p>
+<p>条件1是：</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/11/25/分布式简述/" data-id="6ohw2b55v8oq894e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/12/05/promise-A-通过实践了解细节/" data-id="v03xuejcbdf1vcrg" class="article-share-link">Share</a>
       
       
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-算法与编程的关系" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/11/24/算法与编程的关系/" class="article-date">
-  <time datetime="2014-11-24T07:12:28.000Z" itemprop="datePublished">11月 24 2014</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/算法/">算法</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2014/12/08/co-4-0-0的用法-from-github/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/24/算法与编程的关系/">算法与编程的关系</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+          co 4.0.0的用法 from github
         
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/11/24/算法与编程的关系/" data-id="uii7gta7cpyjgmqy" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
+      </div>
+    </a>
+  
+  
+    <a href="/2014/12/03/javascript与函数式编程/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">javascript与函数式编程</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
-
-  
-  
 </section>
         
           <aside id="sidebar">

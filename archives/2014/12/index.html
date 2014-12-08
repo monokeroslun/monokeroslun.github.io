@@ -67,6 +67,227 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-co-4-0-0的用法-from-github" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/08/co-4-0-0的用法-from-github/" class="article-date">
+  <time datetime="2014-12-08T08:19:06.000Z" itemprop="datePublished">12月 8 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>►<a class="article-category-link" href="/categories/javascript/node-js/">node js</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/08/co-4-0-0的用法-from-github/">co 4.0.0的用法 from github</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="co">co</h1>
+<p> 使用基于Generator的控制流。使用promise,让你优美的编写异步程序。</p>
+<h1 id="co_v4">co v4</h1>
+<p>co的第四版本已经发布了，它是基于promise的。他现在是ES7 ASYNC/AWAIT的基石。主要的改变是在于如何调用co()。之前的版本，co 返回了一个thunk, 之后你就可以用其参数去触发毁掉函数。这个版本的co,是返回一个promise对象。</p>
+<p><img src="../image/co_1.png" alt="image"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/12/08/co-4-0-0的用法-from-github/" data-id="2t40nclqrh7htezf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-promise-A-通过实践了解细节" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/05/promise-A-通过实践了解细节/" class="article-date">
+  <time datetime="2014-12-05T03:34:17.000Z" itemprop="datePublished">12月 5 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/05/promise-A-通过实践了解细节/">promise/A+ 通过实践了解细节</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://modernjavascript.blogspot.jp/2013/08/promisesa-understanding-by-doing.html" target="_blank" rel="external">http://modernjavascript.blogspot.jp/2013/08/promisesa-understanding-by-doing.html</a></p>
+<p>我们会通过 <a href="http://promises-aplus.github.io/promises-spec/" target="_blank" rel="external">http://promises-aplus.github.io/promises-spec/</a> 学会如何实现promise。通过这个，我们可以对promise的工作有一个深刻的了解。我叫它Aplus，并且把他放在github下了。 <a href="https://github.com/rhysbrettbowen/Aplus" target="_blank" rel="external">https://github.com/rhysbrettbowen/Aplus</a></p>
+<p>首先，我们来一个Aplus对象。</p>
+<p><code>Aplus={}</code></p>
+<h2 id="Promise_状态">Promise 状态</h2>
+<p>这里有三个状态： pending,fulfilled and rejected.</p>
+<pre><code>*<span class="built_in">from</span> <span class="keyword">http</span>://promises-aplus.github.io/promises-spec/
+<span class="comment">#promise_states there are three states: pending, </span>
+fulfilled <span class="operator">and</span> rejected. It does <span class="operator">not</span> state <span class="operator">the</span> <span class="built_in">value</span> <span class="operator">of</span> 
+these states, so let<span class="string">'s enumerate them*</span>
+</code></pre><h2 id="Promise_62964977">Promise 62964977</h2>
+<p>promise有三个状态：pending,fulfilled 和 rejected.</p>
+<p>我们可以把它想成一个状态转移图。这个转移图是由状态和转移条件组成的。见下图：</p>
+<p><img src="../image/promise_1.png" alt="image"></p>
+<p>条件1是：</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/12/05/promise-A-通过实践了解细节/" data-id="v03xuejcbdf1vcrg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-javascript与函数式编程" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/03/javascript与函数式编程/" class="article-date">
+  <time datetime="2014-12-03T11:23:27.000Z" itemprop="datePublished">12月 3 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/03/javascript与函数式编程/">javascript与函数式编程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="函数式编程">函数式编程</h2>
+<p><em>lambda演算：一切皆为函数，函数可以作为另一个函数的输出或者是输入，一系列的函数使用最终会形成一个表达式链，这个表达式链可以最终求得一个值，这个过程，是计算的本质</em></p>
+<p><em><a href="https://www.ibm.com/developerworks/cn/web/1006_qiujt_jsfunctional/" target="_blank" rel="external">https://www.ibm.com/developerworks/cn/web/1006_qiujt_jsfunctional/</a></em></p>
+<h3 id="匿名函数">匿名函数</h3>
+<h3 id="柯里化">柯里化</h3>
+<p>为什么要currying化，多参数转单参数的原因？</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/12/03/javascript与函数式编程/" data-id="1yknxizfwz31gkcj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-the-little-schemer前面要说的" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/03/the-little-schemer前面要说的/" class="article-date">
+  <time datetime="2014-12-03T08:44:21.000Z" itemprop="datePublished">12月 3 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/03/the-little-schemer前面要说的/">the little schemer前面要说的</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="写在前面的话">写在前面的话</h1>
+<p>在1967年，我参加了一门关于摄影的概述类型的课程。大多数学生上这门课的初衷是为了学习怎么变得有创造性-就像我崇拜的艺术家Edward Weston一样照出好的照片。第一天，老师耐心的列出了一个关于他这学期要教授的技术清单。一个要点就是Ansel Adams的Zone System （ A key was Ansel Adams’ “Zone System” for previsualizing the print values (blackness in the final print) in a photograph and how they derive from the light intensities in the scene. ）为了学会这个技术，我们需要学习the use of exposure meters to measure light intensities and the use of exposure time and development time to control the black level and the contrast in the image. This is in turn supported by even lower level skills such as loading film, developing and printing, and mixing chemicals. One must learn to ritualize the process of developing sensitive material so that one gets consistent results over many years of work. The first laboratory session was devoted to finding out that developer feels slippery and that fixer smells awful.</p>
+<p>但是创造力的这个部分呢？为了去变的有创造力，我们必须先要掌握一个博物馆的知识。一个人是没有办法在掌握知识之前就能去构思一张好图片的。在工程界，和艺术界一样。我们必须学会分析去支持我们的努力。没有人可以在没有力学等知识的前提下建立一个美丽又功能完善的大桥。同样的，没有人可以在没有一个深刻的关于一个程序的进程的生成的理解就能理解好计算机。</p>
+<p>一些摄影者选择use black-and-white 8xlO plates while others choose 35mm slides。每一个都有他的优势和劣势。就像摄影一样，编写程序需要适度的选择。Lisp是那些喜欢自由和灵活性的人们的选择。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/12/03/the-little-schemer前面要说的/" data-id="z1lr0osqy014q4d8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-λ演算的一些资料" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/02/λ演算的一些资料/" class="article-date">
+  <time datetime="2014-12-02T08:38:38.000Z" itemprop="datePublished">12月 2 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/02/λ演算的一些资料/">λ演算的一些资料</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="函数">函数</h2>
+<p>在数学中，一个函数是描述每个输入值对应唯一输出值的这种对应关系。</p>
+<h2 id="形式语言">形式语言</h2>
+<p>在数学、逻辑和计算机科学中，形式语言（英语：Formal language）是用精确的数学或机器可处理的公式定义的语言。</p>
+<p>如语言学中语言一样，形式语言一般有两个方面: 语法和语义。专门研究语言的语法的数学和计算机科学分支叫做形式语言理论，它只研究语言的语法而不致力于它的语义。在形式语言理论中，形式语言是一个字母表上的某些有限长字符串的集合。一个形式语言可以包含无限多个字符串。</p>
+<h2 id="形式系统">形式系统</h2>
+<p>在逻辑与数学中，一个形式系统（英语：Formal system）是由两个部分组成的，一个形式语言加上一个推理规则或转换规则的集合。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/12/02/λ演算的一些资料/" data-id="7lofseloa324lgcv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-functional-programming-for-the-rest-of-us" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/12/01/functional-programming-for-the-rest-of-us/" class="article-date">
@@ -200,7 +421,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p><a href="http://liujiacai.net/blog/2014/10/12/lambda-calculus-introduction/" target="_blank" rel="external">http://liujiacai.net/blog/2014/10/12/lambda-calculus-introduction/</a></p>
+<p><a href="https://www.ibm.com/developerworks/cn/web/1006_qiujt_jsfunctional/" target="_blank" rel="external">https://www.ibm.com/developerworks/cn/web/1006_qiujt_jsfunctional/</a></p>
+<h2 id="题记">题记</h2>
+<p><strong>一切都是函数，没有指令式编程中变量的概念。它的变量全部都是只允许一次赋值，然后不可改变，就像数学推导中对变量的赋值一样</strong></p>
+<h2 id="LAMBDA演算语法_">LAMBDA演算语法 </h2>
+<h2 id="工程上的实现-函数式编程">工程上的实现-函数式编程</h2>
+<p><code>var result = subtract(multiply(add(1,2), 3), 4);</code></p>
+<p><strong>1 表达式：一个单纯的运算过程，总是存在返回值</strong></p>
+<p><strong> 2语句：一种操作，没有返回值 </strong></p>
+<p><strong>只有表达式，没有语句，进而就不会有二次赋值的变量和外围状态</strong></p>
+<p><strong>函数式编程的开发动机：一切为了处理运算，并没有考虑系统的读写I/O，不要有不必要的读写行为，保持计算过程的单纯性</strong></p>
+<p><strong>用参数保存状态</strong></p>
+<p><strong>若参数相同，引用函数的返回值总是相同</strong></p>
+<h1 id="IBM">IBM</h1>
+<h2 id="currying">currying</h2>
+<pre><code>    把接受多个参数的函数变换成接受单一参数的函数，返回余下的参数及返回结果
+</code></pre><h2 id="高阶函数">高阶函数</h2>
+<pre><code>抽象层次
+</code></pre>
       
     </div>
     <footer class="article-footer">
@@ -223,7 +462,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/杂七杂八/">杂七杂八</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/node-js/">node js</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂七杂八/">杂七杂八</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -236,7 +475,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -248,23 +487,23 @@
       <ul>
         
           <li>
-            <a href="/2014/12/01/functional-programming-for-the-rest-of-us/">functional programming for the rest of us</a>
+            <a href="/2014/12/08/co-4-0-0的用法-from-github/">co 4.0.0的用法 from github</a>
           </li>
         
           <li>
-            <a href="/2014/12/01/函数式编程小记/">函数式编程小记</a>
+            <a href="/2014/12/05/promise-A-通过实践了解细节/">promise/A+ 通过实践了解细节</a>
           </li>
         
           <li>
-            <a href="/2014/11/29/mina-部署/">mina 部署</a>
+            <a href="/2014/12/03/javascript与函数式编程/">javascript与函数式编程</a>
           </li>
         
           <li>
-            <a href="/2014/11/27/koa-ejs/">koa-ejs</a>
+            <a href="/2014/12/03/the-little-schemer前面要说的/">the little schemer前面要说的</a>
           </li>
         
           <li>
-            <a href="/2014/11/25/分布式简述/">分布式简述</a>
+            <a href="/2014/12/02/λ演算的一些资料/">λ演算的一些资料</a>
           </li>
         
       </ul>
